@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://www.json.org/json2.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var frm = $(document.myform);
+            var dat = JSON.stringify(frm.serializeArray());
+
+            alert("I am about to POST this:\n\n" + dat);
+
+            $.post(
+                    frm.attr("action"),
+                    dat,
+                    function(data) {
+                        alert("Response: " + data);
+                    }
+            );
+        });
+    </script>
+</head>
+
+<body>
+<form action="https://trim-webbing-611.appspot.com/_ah/api/nuses/v1/sessions" method="post" name="myform">
+    <input name="firstName" value="Thommy" />
+    <input name="lastName" value="Bommen" />
+    <input name="toEmail" value="thommy.bommen@gmail.com" />
+    <input name="appointment" value="2014-07-14 13:00Z" />
+
+    <!-- </body> -->
+    <input type="button" onclick="generateEmail(firstName, lastName, toEmail, appointment)" value="send emails" />
+</form>
+
+</body>
+</html>
