@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>jQuery UI Datepicker - Default functionality</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script>
+        $(function () {
+            $("#datepicker").datepicker();
+        });
+    </script>
+    <script type="text/javascript">
+        <!--
+        function generateEmailForm(frm) {
+            var form = frm;
+            // collect the form data while iterating over the inputs
+            var data = {};
+            for (var i = 0, ii = form.length; i < ii; ++i) {
+                var input = form[i];
+                if (input.name) {
+                    data[input.name] = input.value;
+                }
+            }
+
+            //alert(JSON.stringify(data));
+            // construct an HTTP request
+            var xhr = new XMLHttpRequest();
+            xhr.open(form.method, form.action, true);
+            xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+
+            // send the collected data as JSON
+            xhr.send(JSON.stringify(data));
+
+            xhr.onloadend = function () {
+                // done
+            };
+        }
+        //-->
+    </script>
+</head>
+<body>
+<form action="https://trim-webbing-611.appspot.com/_ah/api/nuses/v1/sessions" method="post" name="myform">
+    <input name="firstName" value="Thommy"/>
+    <input name="lastName" value="Bommen"/>
+    <input name="email" value="thommy.bommen@gmail.com"/>
+    <input name="appointment" type="text" id="datepicker"/>
+</form>
+<input type="button" onclick="generateEmailForm(document.myform)" value="send emails"/>
+
+</body>
+</html>
